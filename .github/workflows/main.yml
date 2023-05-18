@@ -30,8 +30,8 @@ jobs:
         id: validate
         run: terraform validate -no-color
       - name: Terraform Apply
-        run: terraform plan
-        #run: terraform apply -auto-approve -input=false
+        #run: terraform plan
+        run: terraform apply -auto-approve -input=false
       - name: Run Cypress Test
         uses: cypress-io/github-action@v4
         with:
