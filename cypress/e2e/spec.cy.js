@@ -8,7 +8,7 @@ describe('Cloud Resume Spec', () => {
     cy.title().should('contain', 'Resume');
     cy.contains('Isaac Gallion Resume');
     let n = Number(0)
-    let n2 = Number(1)
+    let n2 = Number(2)
     cy.request({
       method: 'GET',
       url: "https://h0d6a8xs0g.execute-api.us-east-1.amazonaws.com/CloudResumeCounterTerraform",
