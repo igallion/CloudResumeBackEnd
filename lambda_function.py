@@ -59,14 +59,15 @@ def initialize_Table():
     """
 
 
-try:
-    initialize_Table()
-    increment_count()
-except botocore.exceptions.ClientError as e:
-    # Ignore the ConditionalCheckFailedException, bubble up
-    # other exceptions.
-    if e.response['Error']['Code'] != 'ConditionalCheckFailedException':
-        raise
-    else:
-        print("Table already initialized, incrementing count")
+def lambda_handler(event, context):
+    try:
+        initialize_Table()
         increment_count()
+    except botocore.exceptions.ClientError as e:
+        # Ignore the ConditionalCheckFailedException, bubble up
+        # other exceptions.
+        if e.response['Error']['Code'] != 'ConditionalCheckFailedException':
+            raise
+        else:
+            print("Table already initialized, incrementing count")
+            increment_count()
