@@ -43,6 +43,8 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
 
 }
 // Create DynamoDB Item to track visitor count
+// Removing from TF, Lambda will handle initializing this item in the table
+/*
 resource "aws_dynamodb_table_item" "testItem1" {
   table_name = aws_dynamodb_table.basic-dynamodb-table.name
   hash_key   = aws_dynamodb_table.basic-dynamodb-table.hash_key
@@ -53,6 +55,7 @@ resource "aws_dynamodb_table_item" "testItem1" {
     }
     ITEM
 }
+*/
 
 resource "aws_lambda_function" "lambda_Cloud_Resume_Counter_Terraform" {
   function_name    = "CloudResumeCounterTerraform"
