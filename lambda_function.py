@@ -58,6 +58,9 @@ def initialize_Table():
     }
     """
 
+# If table is empty, will be initialized, then count incremented to 1
+# If table exists, count will be incremented by 1
+
 
 def lambda_handler(event, context):
     try:
