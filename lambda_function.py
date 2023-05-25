@@ -62,7 +62,8 @@ def initialize_Table():
 def lambda_handler(event, context):
     try:
         initialize_Table()
-        increment_count()
+        count = increment_count()
+        return count
     except botocore.exceptions.ClientError as e:
         # Ignore the ConditionalCheckFailedException, bubble up
         # other exceptions.
@@ -70,4 +71,5 @@ def lambda_handler(event, context):
             raise
         else:
             print("Table already initialized, incrementing count")
-            increment_count()
+            count = increment_count()
+            return count
