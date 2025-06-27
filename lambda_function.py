@@ -46,17 +46,6 @@ def initialize_Table():
         ConditionExpression='attribute_not_exists(stat) AND attribute_not_exists(Quantity)',
         ReturnValues="ALL_OLD"
     )
-    """
-    return {
-        'statusCode': 200,
-        'headers': {
-            'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'OPTIONS,GET'
-        },
-        'body': json.dumps(init_Result)
-    }
-    """
 
 # If table is empty, will be initialized, then count incremented to 1
 # If table exists, count will be incremented by 1
