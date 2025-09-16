@@ -49,7 +49,7 @@ resource "aws_lambda_function" "lambda_Cloud_Resume_Counter_Terraform" {
   source_code_hash = data.archive_file.lambda_zip_file.output_base64sha256
   handler          = "lambda_function.lambda_handler"
   role             = aws_iam_role.CloudResumeCounterTerraform-role.arn
-  runtime          = "python3.8"
+  runtime          = "python3.13"
 }
 
 data "archive_file" "lambda_zip_file" {
