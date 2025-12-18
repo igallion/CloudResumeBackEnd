@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.21.0"
+      version = "~> 6.26.0"
     }
   }
 
@@ -12,7 +12,7 @@ terraform {
     region = "us-east-1"
   }
 
-  required_version = ">= 1.2.0"
+  required_version = ">= 1.14.3"
 }
 
 provider "aws" {
@@ -49,7 +49,7 @@ resource "aws_lambda_function" "lambda_Cloud_Resume_Counter_Terraform" {
   source_code_hash = data.archive_file.lambda_zip_file.output_base64sha256
   handler          = "lambda_function.lambda_handler"
   role             = aws_iam_role.CloudResumeCounterTerraform-role.arn
-  runtime          = "python3.9"
+  runtime          = "python3.14"
 }
 
 data "archive_file" "lambda_zip_file" {
