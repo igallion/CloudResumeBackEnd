@@ -200,7 +200,7 @@ output "cloudwatch_log_group_arn" {
   description = "The ARN of the cloudwatch group"
 }
 
-output "base_url" {
-  value       = aws_api_gateway_deployment.CloudResumeAPIGatewayDeployment.invoke_url
-  description = "Base URL of CloudResumeAPIGateway Deployment"
-}
+#output "base_url" {
+#  value       = aws_api_gateway_deployment.CloudResumeAPIGatewayDeployment.
+#  description = "Base URL of CloudResumeAPIGateway Deployment"
+#}
