@@ -171,7 +171,7 @@ resource "aws_api_gateway_deployment" "CloudResumeAPIGatewayDeployment" {
   ]
 
   rest_api_id = aws_api_gateway_rest_api.CloudResumeCounterTerraform.id
-  stage_name  = "CloudResumeCounterTerraform"
+  #stage_name  = "CloudResumeCounterTerraform"
 }
 
 resource "aws_lambda_permission" "apigw" {
